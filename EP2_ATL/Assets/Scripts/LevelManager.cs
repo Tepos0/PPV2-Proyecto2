@@ -4,9 +4,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Este script esta creado para administrar toda la inforacion de la lección, la sección y las preguntas 
+/// </summary>
 public class LevelManager : MonoBehaviour
 {
-    //Instancia de la clase
+    //
     public static LevelManager Instance;
     [Header("Level Data")]
     public Subject Lesson;
@@ -150,7 +153,7 @@ public class LevelManager : MonoBehaviour
     {
         answerFromPlayer = _answer;
     }
-
+    //Este metodo hace que el boton de respuesta sea interactuable, siempre y cuando contenga información 
     public bool CheckPlayerState()
     {
         if (answerFromPlayer != 9)
