@@ -13,6 +13,8 @@ public class SaveSystem : MonoBehaviour
     /// Este script es de los mas importante ya que en este se econtraran loos metodos de guardado de las lecciones
     /// </summary>
     public static SaveSystem instance;
+    public Leccion data;
+    public SubjectContainer subject;
     private void Awake()
     {
         if (instance != null)
@@ -50,6 +52,28 @@ public class SaveSystem : MonoBehaviour
             Debug.LogWarning("ERROR - FileSystmen: _data is null, check for param [obect _data");
         }
     }
+
+    public T LoadFromJSON<T>(string _fileName) where T : new()
+    {
+        T Dato = new T();
+        string path = Application.dataPath + "/Resources/JSONS/" + _fileName + ".json";
+        string JSONData = "";
+        if (File.Exists(path))
+        {
+            JSONData = File.ReadAllText(path);
+            Debug.Log("JSON STRING : " + JSONData);
+        }
+        if (JSONData.Length  !=0 )
+        {
+            JsonUtility.FromJsonOverwrite(JSONData, Dato);
+        }
+        else
+        {
+            Debug.LogWarning("ERROR - FileSystem: JSON Data is empty, check for local variable [String JSONData");
+        }
+        return Dato;
+
+    }
     
     //esta función esta creada para crear el lugar donde guaradaremos los datos
     public void CreateFile(string _name , string _extension)
@@ -75,7 +99,7 @@ public class SaveSystem : MonoBehaviour
         string ReadFile(string _filename, string _extension)
         {
             //1.-Acceder al path del archivo
-            string path = Application.dataPath+ "/Resources/" + _filename + _extension;
+            string path = Application.dataPath + "/Resources/" + _filename + _extension;
             //2.-Si existe el archivo, nos dara su informacion
             string data = "";
             if (File.Exists(path))
@@ -87,9 +111,12 @@ public class SaveSystem : MonoBehaviour
   
     private void Start()
     {
-        CreateFile("luis position", ".Data");
+        //SaveToJson("Lección Dummy", data);
+        //CreateFile("luis position", ".Data");
         
-        Debug.Log(ReadFile("position" , ".Data"));
+        //Debug.Log(ReadFile("position" , ".Data"));
+
+        subject = LoadFromJSON<SubjectContainer>("Leccion");
     }
 
     // Update is called once per frame
