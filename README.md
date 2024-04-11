@@ -10,5 +10,5 @@ tus vidas se acaba la lección.
 
 ![Captura de pantalla 2024-03-15 203128](https://github.com/Tepos0/PPV2-Proyecto2/assets/156474905/721a89f7-2137-441b-bb43-e0f9b1e03056)
 
-![Captura de pantalla 2024-03-15 203110](https://github.com/Tepos0/PPV2-Proyecto2/assets/156474905/e23c481c-8437-4b2d-a611-64fafc0d368a)
 
+![image](https://github.com/Tepos0/PPV2-Proyecto2/assets/156474905/29beb9d2-5376-4e30-b992-d18c717ed9de)
