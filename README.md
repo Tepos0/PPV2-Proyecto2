@@ -6,9 +6,11 @@ habra que picar el boton de "comprobar" y este nos indicara si nuestra respuesta
 de color verde y si es incorrecta, se iluminara de color rojo. Tambien hay un contadopr de vidas, cada error quita una vida y cuando pierdes todas 
 tus vidas se acaba la lección.
 
+![Captura de pantalla 2024-03-15 203128](https://github.com/Tepos0/PPV2-Proyecto2/assets/156474905/721a89f7-2137-441b-bb43-e0f9b1e03056)
+
+
 ![Captura de pantalla 2024-03-15 203051](https://github.com/Tepos0/PPV2-Proyecto2/assets/156474905/9c28c385-5e83-4e31-9ca8-cf7155718731)
 
-![Captura de pantalla 2024-03-15 203128](https://github.com/Tepos0/PPV2-Proyecto2/assets/156474905/721a89f7-2137-441b-bb43-e0f9b1e03056)
 
 
 ![image](https://github.com/Tepos0/PPV2-Proyecto2/assets/156474905/29beb9d2-5376-4e30-b992-d18c717ed9de)
