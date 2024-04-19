@@ -173,6 +173,10 @@ public class LevelManager : MonoBehaviour
 
         }
     }
+
+    /// <summary>
+    /// Este metodo es la que se encarga de salir de la lección al menu de selección de lección 
+    /// </summary>
     public void Exit()
     {
         SceneManager.LoadScene("MainScreen");
