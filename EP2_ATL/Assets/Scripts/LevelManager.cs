@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
@@ -12,7 +13,8 @@ public class LevelManager : MonoBehaviour
     //
     public static LevelManager Instance;
     [Header("Level Data")]
-    public Subject Lesson;
+    
+    public SubjectContainer subject;
 
     //estas son las variables que almacenan los datos que se utilizan para cambiara de pregunta, opcion y respuesta
     [Header("User Interface")]
@@ -52,8 +54,9 @@ public class LevelManager : MonoBehaviour
     // este metodo esta creado para inicializar las preguntas y configurar el numero de preguntas 
     void Start()
     {
+        subject = SaveSystem.instance.subject;
         //Establecemos la cantidad de preguntas en la leccion
-        questionAmount = Lesson.leccionList.Count;
+        questionAmount = subject.leccionList.Count;
         //Cargar la primera pergunta
         LoadQuestion();
         //check player input
@@ -66,7 +69,7 @@ public class LevelManager : MonoBehaviour
         if (currentQuestion < questionAmount)
         {
             //Establecemos la leccíon actual
-            currentLesson = Lesson.leccionList[currentQuestion];
+            currentLesson = subject.leccionList[currentQuestion];
             //Establecemos la pregunta
             question = currentLesson.lessons;
             //Establecemos la respuesta correcta
@@ -169,5 +172,9 @@ public class LevelManager : MonoBehaviour
             return false;
 
         }
+    }
+    public void Exit()
+    {
+        SceneManager.LoadScene("MainScreen");
     }
 }

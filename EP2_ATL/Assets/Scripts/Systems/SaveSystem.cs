@@ -4,13 +4,13 @@ using System.IO;
 using TMPro;
 using Unity.Collections;
 using Unity.VisualScripting;
-using UnityEditorInternal;
+
 using UnityEngine;
 
 public class SaveSystem : MonoBehaviour
 {
     /// <summary>
-    /// Este script es de los mas importante ya que en este se econtraran loos metodos de guardado de las lecciones
+    /// Este script es de los mas importante ya que en este se econtraran los metodos de guardado de las lecciones
     /// </summary>
     public static SaveSystem instance;
     public Leccion data;
@@ -25,7 +25,10 @@ public class SaveSystem : MonoBehaviour
         {
             instance = this;
         }
+        subject = LoadFromJSON<SubjectContainer>(PlayerPrefs.GetString("SelectedLesson"));
     }
+
+    //Este metodo es el que se encarga de seleccionar la ubicación en donde se almacenara la información de guardado
     public void SaveToJson(string _fileName, object _data)
     {
         if (_data != null)
@@ -36,7 +39,7 @@ public class SaveSystem : MonoBehaviour
             {
                 Debug.Log("JSON STRING: " + JSONData);
                 string fileName = _fileName + ".json";
-                string filePath = Path.Combine(Application.dataPath + "/Resources/JSONS/" + fileName);
+                string filePath = Path.Combine(Application.dataPath + "/StreamingAssets/" + fileName);
                 File.WriteAllText(filePath, JSONData);
                 Debug.Log("JSON almacenado en la dirección: " + filePath);
             }
@@ -53,10 +56,11 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
+    //Este metodo se encarga de cargar la información de la lección en el JSON 
     public T LoadFromJSON<T>(string _fileName) where T : new()
     {
         T Dato = new T();
-        string path = Application.dataPath + "/Resources/JSONS/" + _fileName + ".json";
+        string path = Application.dataPath + "/StreamingAssets/" + _fileName + ".json";
         string JSONData = "";
         if (File.Exists(path))
         {
@@ -99,7 +103,7 @@ public class SaveSystem : MonoBehaviour
         string ReadFile(string _filename, string _extension)
         {
             //1.-Acceder al path del archivo
-            string path = Application.dataPath + "/Resources/" + _filename + _extension;
+            string path = Application.dataPath + "/StreamingAssets/" + _filename + _extension;
             //2.-Si existe el archivo, nos dara su informacion
             string data = "";
             if (File.Exists(path))
@@ -108,20 +112,4 @@ public class SaveSystem : MonoBehaviour
             }
             return data;  
         }
-  
-    private void Start()
-    {
-        //SaveToJson("Lección Dummy", data);
-        //CreateFile("luis position", ".Data");
-        
-        //Debug.Log(ReadFile("position" , ".Data"));
-
-        subject = LoadFromJSON<SubjectContainer>("Leccion");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

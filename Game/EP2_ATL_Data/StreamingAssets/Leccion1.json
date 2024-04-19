@@ -1,0 +1,65 @@
+{
+    "Lesson": 0,
+    "leccionList": [
+        {
+            "ID": 1,
+            "lessons": "¿Qué es Unity?",
+            "options": [
+                "Un motor de desarrollo de videojuegos",
+                "Un lenguaje de programación",
+                "Una empresa de software",
+                "Una plataforma de streaming",
+                "Una red social para desarrolladores"
+            ],
+            "correctAnswer": 0
+        },
+        {
+            "ID": 2,
+            "lessons": "¿Qué lenguaje de programación se utiliza principalmente en Unity?",
+            "options": [
+                "Python",
+                "JavaScript",
+                "C#",
+                "Java",
+                "Ruby"
+            ],
+            "correctAnswer": 2
+        },
+        {
+            "ID": 3,
+            "lessons": "¿Qué es un GameObject en Unity?",
+            "options": [
+                "Una clase de objetos 3D",
+                "Una unidad de medida en el juego",
+                "Una función de script",
+                "Un tipo de componente",
+                "Un archivo de configuración"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "ID": 4,
+            "lessons": "¿Qué es un componente Rigidbody en Unity?",
+            "options": [
+                "Una interfaz de usuario",
+                "Un tipo de textura",
+                "Un sistema de partículas",
+                "Un componente para simular físicas",
+                "Un tipo de cámara"
+            ],
+            "correctAnswer": 3
+        },
+        {
+            "ID": 5,
+            "lessons": "¿Qué función cumple el método Start() en un script de Unity?",
+            "options": [
+                "Inicia el juego",
+                "Carga los recursos del juego",
+                "Se ejecuta cada frame",
+                "Inicializa variables al inicio",
+                "Detiene la ejecución del juego"
+            ],
+            "correctAnswer": 3
+        }
+    ]
+}
